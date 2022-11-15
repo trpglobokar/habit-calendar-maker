@@ -1,0 +1,23 @@
+.Day {
+  border: 1px solid #000;
+  flex-grow: 1;
+  width: 20%;
+  padding: 2px 8px 8px 8px;
+  font-size: 18px;
+}
+
+.Totals {
+  width: 100%;
+  display: flex;
+}
+
+.RunningTotal, .TodaysTotal {
+  height: 20px;
+
+  border-bottom: 1px solid #000;
+  flex-grow: 2;
+}
+
+.Gap {
+  flex-grow: 1;
+}
