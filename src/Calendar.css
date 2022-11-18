@@ -30,3 +30,11 @@
   flex-grow: 1;
   font-size: 0.8em;
 }
+
+.Pickers {
+  display: flex;
+  justify-content: center;
+}
+.Pickers > div {
+  min-width: 160px;
+}
