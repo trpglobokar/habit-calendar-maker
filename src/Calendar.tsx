@@ -1,18 +1,20 @@
 import React from "react";
 
 import { useAppSelector } from "./data/hooks";
-import { selectMonth, selectYear } from "./data/dateSlice";
+import { selectMonth, selectYear, selectChores } from "./data/dateSlice";
 
 import Day from "./Day";
-import PickerMonth from "./PickerMonth";
-import PickerYear from "./PickerYear";
+import PickerMonth from "./pickers/PickerMonth";
+import PickerYear from "./pickers/PickerYear";
 
 import "./Calendar.css";
 import { generateMonthInfo } from "./utils/utils";
+import ChoreListItem from "./pickers/ChoreListItem";
 
 const Calendar: React.FunctionComponent = () => {
   const selectedMonth = useAppSelector(selectMonth);
   const selectedYear = useAppSelector(selectYear);
+  const chores = useAppSelector(selectChores);
 
   const { monthName, weekdayOfMonthStart, daysInMonth } = generateMonthInfo(
     selectedMonth,
@@ -54,18 +56,20 @@ const Calendar: React.FunctionComponent = () => {
     (weekdayName) => <div className="CalendarLabel">{weekdayName}</div>
   );
 
+  const choreSalaries = chores.map((chore) => (
+    <div className="ChoreSalary">
+      <ChoreListItem key={chore.id} chore={chore} />
+    </div>
+  ));
+
   return (
     <div className="CalendarWrapper">
       <h1>
-        {monthName} {selectedYear}
+        {monthName} {selectedYear} - Habit Tracker
       </h1>
       <div className="CalendarLabels">{Labels}</div>
       <div className="Calendar">{Weeks}</div>
-      <div className="ChoreSalaries">
-        <div className="ChoreSalary">Writing: $0.05/15min</div>
-        <div className="ChoreSalary">Exercise: $0.25/15min</div>
-        <div className="ChoreSalary">Cleaning: $0.25/15min</div>
-      </div>
+      <div className="ChoreSalaries">{choreSalaries}</div>
       <div className="Pickers">
         <PickerMonth />
         <PickerYear />

@@ -3,6 +3,12 @@ export interface Month {
   daysInMonth: number;
 }
 
+export interface Chore {
+  id: string;
+  name: string;
+  reward: string;
+}
+
 export enum monthsEnum {
   January,
   February,

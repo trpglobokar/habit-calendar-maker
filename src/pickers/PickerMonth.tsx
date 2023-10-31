@@ -2,9 +2,9 @@ import React, { FunctionComponent } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-import { useAppSelector, useAppDispatch } from "./data/hooks";
-import { selectMonth, changeMonth } from "./data/dateSlice";
-import { monthsEnum } from "./data/types";
+import { useAppSelector, useAppDispatch } from "../data/hooks";
+import { selectMonth, changeMonth } from "../data/dateSlice";
+import { monthsEnum } from "../data/types";
 
 const PickerMonth: FunctionComponent = () => {
   const selectedMonth = useAppSelector(selectMonth);

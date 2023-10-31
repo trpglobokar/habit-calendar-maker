@@ -1,33 +1,32 @@
 import React from "react";
 import ChoreLog from "./ChoreLog";
 
+import { useAppSelector } from "./data/hooks";
+import { selectChores } from "./data/dateSlice";
+
 import "./Day.css";
 
 interface DayProps {
   date?: number;
 }
 const Day: React.FunctionComponent<DayProps> = ({ date }) => {
-  const dateHeader = date ? <div>{date}</div> : null;
-  const choreLogs = date ? (
-    <>
-      <ChoreLog title="Writing" />
-      <ChoreLog title="Exercise" />
-      <ChoreLog title="Cleaning" />
-    </>
-  ) : null;
-  const totals = date ? (
-    <div className="Totals">
-      <div className="TodaysTotal" />
-      <div className="Gap" />
-      <div className="RunningTotal" />
-    </div>
-  ) : null;
+  const chores = useAppSelector(selectChores);
+
+  if (!date) {
+    return <div className="Day"></div>;
+  }
+
+  const choreLogs = chores.map((chore) => <ChoreLog title={chore.name} />);
 
   return (
     <div className="Day">
-      {dateHeader}
+      <div>{date}</div>
       {choreLogs}
-      {totals}
+      <div className="Totals">
+        <div className="TodaysTotal" />
+        <div className="Gap" />
+        <div className="RunningTotal" />
+      </div>
     </div>
   );
 };
