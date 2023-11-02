@@ -5,6 +5,12 @@
   font-size: 0.8em;
 }
 
-.HabitListItem {
+.HabitListItem, .NewHabitButtonWrapper {
   width: 25%;
+}
+
+@media print {
+  .NewHabitButtonWrapper {
+    display: none;
+  }
 }

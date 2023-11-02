@@ -1,0 +1,5 @@
+@media print {
+  .ControlsWrapper {
+    display: none;
+  }
+}

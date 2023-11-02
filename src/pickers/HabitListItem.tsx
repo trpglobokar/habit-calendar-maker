@@ -10,6 +10,8 @@ import { deleteHabit } from "../data/dateSlice";
 import { useAppDispatch } from "../data/hooks";
 import { Habit } from "../data/types";
 
+import "./HabitListItem.css";
+
 interface HabitListItemProps {
   habit: Habit;
 }
@@ -39,12 +41,14 @@ const HabitListItem: React.FunctionComponent<HabitListItemProps> = ({
         {" "}
         {habit.name}: {habit.reward}
       </span>
-      <IconButton aria-label="edit" onClick={() => setIsEditMode(true)}>
-        <EditIcon />
-      </IconButton>
-      <IconButton aria-label="delete" onClick={handleDelete}>
-        <DeleteIcon />
-      </IconButton>
+      <span className="ControlsWrapper">
+        <IconButton aria-label="edit" onClick={() => setIsEditMode(true)}>
+          <EditIcon />
+        </IconButton>
+        <IconButton aria-label="delete" onClick={handleDelete}>
+          <DeleteIcon />
+        </IconButton>
+      </span>
     </li>
   );
 };

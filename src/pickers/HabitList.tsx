@@ -12,7 +12,7 @@ const HabitList: React.FunctionComponent = () => {
 
   const newItem =
     habits.length < 4 ? (
-      <div className="HabitListItem">
+      <div className="NewHabitButtonWrapper">
         <NewHabit />
       </div>
     ) : null;
