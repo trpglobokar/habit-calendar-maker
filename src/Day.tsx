@@ -1,8 +1,8 @@
 import React from "react";
 
-import ChoreLog from "./ChoreLog";
-import { selectChores } from "./data/dateSlice";
+import { selectHabits } from "./data/dateSlice";
 import { useAppSelector } from "./data/hooks";
+import HabitLog from "./HabitLog";
 
 import "./Day.css";
 
@@ -10,18 +10,18 @@ interface DayProps {
   date?: number;
 }
 const Day: React.FunctionComponent<DayProps> = ({ date }) => {
-  const chores = useAppSelector(selectChores);
+  const habits = useAppSelector(selectHabits);
 
   if (!date) {
     return <div className="Day"></div>;
   }
 
-  const choreLogs = chores.map((chore) => <ChoreLog title={chore.name} />);
+  const habitLogs = habits.map((habit) => <HabitLog title={habit.name} />);
 
   return (
     <div className="Day">
       <div>{date}</div>
-      {choreLogs}
+      {habitLogs}
       <div className="Totals">
         <div className="TodaysTotal" />
         <div className="Gap" />

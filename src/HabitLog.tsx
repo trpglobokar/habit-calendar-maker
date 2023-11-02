@@ -1,19 +1,19 @@
 import React from "react";
 
-import "./ChoreLog.css";
+import "./HabitLog.css";
 
-interface ChoreLogProps {
+interface HabitLogProps {
   title: string;
 }
-const ChoreLog: React.FunctionComponent<ChoreLogProps> = ({ title }) => {
+const HabitLog: React.FunctionComponent<HabitLogProps> = ({ title }) => {
   const logBubbles = [...Array(4)].map((_x) => <span className="LogBubble" />);
 
   return (
-    <div className="ChoreLog">
+    <div className="HabitLog">
       <span>{title}:</span>
       <span className="LogBubbles">{logBubbles}</span>
     </div>
   );
 };
 
-export default ChoreLog;
+export default HabitLog;

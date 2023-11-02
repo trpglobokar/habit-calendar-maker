@@ -22,15 +22,6 @@
   justify-content: stretch;
 }
 
-.ChoreSalaries {
-  display: flex;
-  padding: 8px;
-}
-.ChoreSalary {
-  flex-grow: 1;
-  font-size: 0.8em;
-}
-
 .Pickers {
   display: flex;
   justify-content: center;

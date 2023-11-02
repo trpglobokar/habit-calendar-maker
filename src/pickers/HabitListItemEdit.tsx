@@ -3,31 +3,31 @@ import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 
-import { changeChore, createHabit } from "../data/dateSlice";
+import { changeHabit, createHabit } from "../data/dateSlice";
 import { useAppDispatch } from "../data/hooks";
-import { Chore, defaultHabit } from "../data/types";
+import { Habit, defaultHabit } from "../data/types";
 
 import "./HabitListItemEdit.css";
 
 interface HabitListItemEditProps {
-  chore?: Chore;
+  habit?: Habit;
   handleExitEdit: () => void;
 }
 const HabitListItemEdit: React.FunctionComponent<HabitListItemEditProps> = ({
-  chore,
+  habit,
   handleExitEdit,
 }) => {
   const dispatch = useAppDispatch();
-  const { id, name, reward } = chore ? chore : defaultHabit;
+  const { id, name, reward } = habit ? habit : defaultHabit;
 
-  const [tempChoreName, setTempChoreName] = useState(name);
+  const [tempHabitName, setTempHabitName] = useState(name);
   const [tempReward, setTempReward] = useState(reward);
 
-  const isNewItem = !chore;
-  const isSaveDisabled = !tempChoreName || !tempReward;
+  const isNewItem = !habit;
+  const isSaveDisabled = !tempHabitName || !tempReward;
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTempChoreName(event.currentTarget.value);
+    setTempHabitName(event.currentTarget.value);
   };
 
   const handleRewardChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,7 +42,7 @@ const HabitListItemEdit: React.FunctionComponent<HabitListItemEditProps> = ({
     ? () => {
         dispatch(
           createHabit({
-            name: tempChoreName,
+            name: tempHabitName,
             reward: tempReward,
           })
         );
@@ -50,9 +50,9 @@ const HabitListItemEdit: React.FunctionComponent<HabitListItemEditProps> = ({
       }
     : () => {
         dispatch(
-          changeChore({
+          changeHabit({
             id: id,
-            name: tempChoreName,
+            name: tempHabitName,
             reward: tempReward,
           })
         );
@@ -63,7 +63,7 @@ const HabitListItemEdit: React.FunctionComponent<HabitListItemEditProps> = ({
     <div key={id} className="EditWrapper">
       <TextField
         label="Habit Name"
-        value={tempChoreName}
+        value={tempHabitName}
         size="small"
         onChange={handleNameChange}
       />

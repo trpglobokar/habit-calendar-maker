@@ -6,38 +6,38 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
 import HabitListItemEdit from "./HabitListItemEdit";
-import { deleteChore } from "../data/dateSlice";
+import { deleteHabit } from "../data/dateSlice";
 import { useAppDispatch } from "../data/hooks";
-import { Chore } from "../data/types";
+import { Habit } from "../data/types";
 
-interface ChoreListItemProps {
-  chore: Chore;
+interface HabitListItemProps {
+  habit: Habit;
 }
-const ChoreListItem: React.FunctionComponent<ChoreListItemProps> = ({
-  chore,
+const HabitListItem: React.FunctionComponent<HabitListItemProps> = ({
+  habit,
 }) => {
   const [isEditMode, setIsEditMode] = useState(false);
 
   const dispatch = useAppDispatch();
 
   const handleDelete = () => {
-    dispatch(deleteChore(chore.id));
+    dispatch(deleteHabit(habit.id));
   };
 
   if (isEditMode) {
     return (
       <HabitListItemEdit
-        chore={chore}
+        habit={habit}
         handleExitEdit={() => setIsEditMode(false)}
       />
     );
   }
 
   return (
-    <li key={chore.id}>
+    <li key={habit.id}>
       <span>
         {" "}
-        {chore.name}: {chore.reward}
+        {habit.name}: {habit.reward}
       </span>
       <IconButton aria-label="edit" onClick={() => setIsEditMode(true)}>
         <EditIcon />
@@ -49,4 +49,4 @@ const ChoreListItem: React.FunctionComponent<ChoreListItemProps> = ({
   );
 };
 
-export default ChoreListItem;
+export default HabitListItem;

@@ -2,19 +2,19 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
 import { RootState } from "./store";
-import { Chore } from "./types";
+import { Habit } from "./types";
 
 export interface DateState {
   month: string;
   year: string;
-  chores: Chore[];
+  habits: Habit[];
 }
 const initialState: () => DateState = () => {
   const currentDate = new Date();
   const month = (currentDate.getMonth() + 1).toString();
   const year = currentDate.getFullYear().toString();
 
-  const defaultChores = [
+  const defaultHabits = [
     { id: uuidv4(), name: "Exercise", reward: "$0.25/15min" },
     { id: uuidv4(), name: "Cleaning", reward: "$0.25/15min" },
   ];
@@ -22,7 +22,7 @@ const initialState: () => DateState = () => {
   return {
     month,
     year,
-    chores: defaultChores,
+    habits: defaultHabits,
   };
 };
 
@@ -36,40 +36,40 @@ export const dateSlice = createSlice({
     changeYear: (state, action: PayloadAction<string>) => {
       state.year = action.payload;
     },
-    changeChore: (state, action: PayloadAction<Chore>) => {
-      state.chores = state.chores.map((chore) =>
-        action.payload.id !== chore.id ? chore : action.payload
+    changeHabit: (state, action: PayloadAction<Habit>) => {
+      state.habits = state.habits.map((habit) =>
+        action.payload.id !== habit.id ? habit : action.payload
       );
     },
     createHabit: (
       state,
-      action: PayloadAction<Pick<Chore, "name" | "reward">>
+      action: PayloadAction<Pick<Habit, "name" | "reward">>
     ) => {
       const newHabit = {
         id: uuidv4(),
         name: action.payload.name,
         reward: action.payload.reward,
       };
-      state.chores = state.chores.concat([newHabit]);
+      state.habits = state.habits.concat([newHabit]);
     },
-    deleteChore: (state, action: PayloadAction<string>) => {
-      state.chores = state.chores.filter(
-        (chore) => action.payload !== chore.id
+    deleteHabit: (state, action: PayloadAction<string>) => {
+      state.habits = state.habits.filter(
+        (habit) => action.payload !== habit.id
       );
     },
   },
 });
 
 export const {
-  changeChore,
+  changeHabit,
   changeMonth,
   changeYear,
   createHabit,
-  deleteChore,
+  deleteHabit,
 } = dateSlice.actions;
 
 export const selectMonth = (state: RootState) => state.date.month;
 export const selectYear = (state: RootState) => state.date.year;
-export const selectChores = (state: RootState) => state.date.chores;
+export const selectHabits = (state: RootState) => state.date.habits;
 
 export default dateSlice.reducer;

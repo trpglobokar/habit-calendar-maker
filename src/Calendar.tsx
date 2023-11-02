@@ -3,7 +3,7 @@ import React from "react";
 import { selectMonth, selectYear } from "./data/dateSlice";
 import { useAppSelector } from "./data/hooks";
 import Day from "./Day";
-import ChoreList from "./pickers/ChoreList";
+import HabitList from "./pickers/HabitList";
 import PickerMonth from "./pickers/PickerMonth";
 import PickerYear from "./pickers/PickerYear";
 import { generateMonthInfo } from "./utils/utils";
@@ -61,7 +61,7 @@ const Calendar: React.FunctionComponent = () => {
       </h1>
       <div className="CalendarLabels">{Labels}</div>
       <div className="Calendar">{Weeks}</div>
-      <ChoreList />
+      <HabitList />
       <div className="Pickers">
         <PickerMonth />
         <PickerYear />

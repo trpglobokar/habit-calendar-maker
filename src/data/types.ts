@@ -4,7 +4,7 @@ export interface Month {
   daysInMonth: number;
 }
 
-export interface Chore {
+export interface Habit {
   id: string;
   name: string;
   reward: string;
