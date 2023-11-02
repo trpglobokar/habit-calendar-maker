@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
+
 import IconButton from "@mui/material/IconButton";
 
-import { useAppDispatch } from "../data/hooks";
-import { deleteChore } from "../data/dateSlice";
-import { Chore } from "../data/types";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 
 import HabitListItemEdit from "./HabitListItemEdit";
+import { deleteChore } from "../data/dateSlice";
+import { useAppDispatch } from "../data/hooks";
+import { Chore } from "../data/types";
 
 interface ChoreListItemProps {
   chore: Chore;

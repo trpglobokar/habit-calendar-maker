@@ -1,9 +1,10 @@
 import React, { FunctionComponent } from "react";
+
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-import { useAppSelector, useAppDispatch } from "../data/hooks";
 import { selectMonth, changeMonth } from "../data/dateSlice";
+import { useAppSelector, useAppDispatch } from "../data/hooks";
 import { monthsEnum } from "../data/types";
 
 const PickerMonth: FunctionComponent = () => {
@@ -17,11 +18,8 @@ const PickerMonth: FunctionComponent = () => {
   const monthNames = Object.keys(monthsEnum).filter((v) => isNaN(Number(v)));
 
   const menuItems = monthNames.map((monthName, index) => {
-    console.log("index", index);
     return <MenuItem value={index + 1}>{monthName}</MenuItem>;
   });
-
-  console.log("selectedMonth", selectedMonth);
 
   return (
     <div className="PickerMonth">

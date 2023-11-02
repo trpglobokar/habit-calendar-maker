@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-
-import { useAppSelector } from "../data/hooks";
-import { selectChores } from "../data/dateSlice";
+import React from "react";
 
 import ChoreListItem from "./ChoreListItem";
 import NewHabit from "./NewHabit";
+import { selectChores } from "../data/dateSlice";
+import { useAppSelector } from "../data/hooks";
 
 import "./ChoreList.css";
 

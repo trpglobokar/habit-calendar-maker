@@ -1,15 +1,12 @@
 import React from "react";
 
-import { useAppSelector } from "./data/hooks";
 import { selectMonth, selectYear } from "./data/dateSlice";
-
+import { useAppSelector } from "./data/hooks";
 import Day from "./Day";
+import ChoreList from "./pickers/ChoreList";
 import PickerMonth from "./pickers/PickerMonth";
 import PickerYear from "./pickers/PickerYear";
-
 import { generateMonthInfo } from "./utils/utils";
-
-import ChoreList from "./pickers/ChoreList";
 
 import "./Calendar.css";
 
@@ -22,7 +19,7 @@ const Calendar: React.FunctionComponent = () => {
     selectedYear
   );
 
-  const maxDays: Number = 42;
+  const maxDays: number = 42;
 
   let tempWeek = [];
   let Weeks = [];

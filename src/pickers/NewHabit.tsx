@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import IconButton from "@mui/material/IconButton";
+
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 import HabitListItemEdit from "./HabitListItemEdit";
 

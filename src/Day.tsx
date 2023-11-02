@@ -1,8 +1,8 @@
 import React from "react";
-import ChoreLog from "./ChoreLog";
 
-import { useAppSelector } from "./data/hooks";
+import ChoreLog from "./ChoreLog";
 import { selectChores } from "./data/dateSlice";
+import { useAppSelector } from "./data/hooks";
 
 import "./Day.css";
 

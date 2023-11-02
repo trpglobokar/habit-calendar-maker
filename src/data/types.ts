@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export interface Month {
   name: string;
   daysInMonth: number;

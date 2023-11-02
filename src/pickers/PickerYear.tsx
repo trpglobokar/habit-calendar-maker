@@ -1,9 +1,10 @@
 import React, { FunctionComponent } from "react";
+
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-import { useAppSelector, useAppDispatch } from "../data/hooks";
 import { selectYear, changeYear } from "../data/dateSlice";
+import { useAppSelector, useAppDispatch } from "../data/hooks";
 
 const PickerYear: FunctionComponent = () => {
   const selectedYear = useAppSelector(selectYear);
@@ -24,8 +25,6 @@ const PickerYear: FunctionComponent = () => {
   const menuItems = availableYears.map((year) => {
     return <MenuItem value={year}>{year}</MenuItem>;
   });
-
-  console.log("selectedMonth", selectedYear);
 
   return (
     <div className="PickerYear">
