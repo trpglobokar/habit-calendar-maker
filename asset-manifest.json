@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/habit-calendar-maker/static/css/main.df2532a2.css",
-    "main.js": "/habit-calendar-maker/static/js/main.a3ff6d56.js",
+    "main.css": "/habit-calendar-maker/static/css/main.954bb0ae.css",
+    "main.js": "/habit-calendar-maker/static/js/main.101e24ae.js",
     "static/js/787.3e3d6055.chunk.js": "/habit-calendar-maker/static/js/787.3e3d6055.chunk.js",
     "index.html": "/habit-calendar-maker/index.html",
-    "main.df2532a2.css.map": "/habit-calendar-maker/static/css/main.df2532a2.css.map",
-    "main.a3ff6d56.js.map": "/habit-calendar-maker/static/js/main.a3ff6d56.js.map",
+    "main.954bb0ae.css.map": "/habit-calendar-maker/static/css/main.954bb0ae.css.map",
+    "main.101e24ae.js.map": "/habit-calendar-maker/static/js/main.101e24ae.js.map",
     "787.3e3d6055.chunk.js.map": "/habit-calendar-maker/static/js/787.3e3d6055.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df2532a2.css",
-    "static/js/main.a3ff6d56.js"
+    "static/css/main.954bb0ae.css",
+    "static/js/main.101e24ae.js"
   ]
 }
