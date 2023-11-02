@@ -1,0 +1,10 @@
+.HabitList {
+  display: flex;
+  justify-content: center;
+  padding: 12px 8px;
+  font-size: 0.8em;
+}
+
+.HabitListItem {
+  width: 25%;
+}

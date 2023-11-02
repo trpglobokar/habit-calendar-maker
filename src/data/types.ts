@@ -23,3 +23,5 @@ export enum monthsEnum {
   November,
   December,
 }
+
+export const defaultHabit = { id: "temp", name: "", reward: "" };

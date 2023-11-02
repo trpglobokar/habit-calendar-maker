@@ -1,4 +1,4 @@
-import { createSlice, configureStore, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
 import { RootState } from "./store";
@@ -41,6 +41,17 @@ export const dateSlice = createSlice({
         action.payload.id !== chore.id ? chore : action.payload
       );
     },
+    createHabit: (
+      state,
+      action: PayloadAction<Pick<Chore, "name" | "reward">>
+    ) => {
+      const newHabit = {
+        id: uuidv4(),
+        name: action.payload.name,
+        reward: action.payload.reward,
+      };
+      state.chores = state.chores.concat([newHabit]);
+    },
     deleteChore: (state, action: PayloadAction<string>) => {
       state.chores = state.chores.filter(
         (chore) => action.payload !== chore.id
@@ -49,8 +60,13 @@ export const dateSlice = createSlice({
   },
 });
 
-export const { changeChore, changeMonth, changeYear, deleteChore } =
-  dateSlice.actions;
+export const {
+  changeChore,
+  changeMonth,
+  changeYear,
+  createHabit,
+  deleteChore,
+} = dateSlice.actions;
 
 export const selectMonth = (state: RootState) => state.date.month;
 export const selectYear = (state: RootState) => state.date.year;

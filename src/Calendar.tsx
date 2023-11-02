@@ -1,20 +1,21 @@
 import React from "react";
 
 import { useAppSelector } from "./data/hooks";
-import { selectMonth, selectYear, selectChores } from "./data/dateSlice";
+import { selectMonth, selectYear } from "./data/dateSlice";
 
 import Day from "./Day";
 import PickerMonth from "./pickers/PickerMonth";
 import PickerYear from "./pickers/PickerYear";
 
-import "./Calendar.css";
 import { generateMonthInfo } from "./utils/utils";
-import ChoreListItem from "./pickers/ChoreListItem";
+
+import ChoreList from "./pickers/ChoreList";
+
+import "./Calendar.css";
 
 const Calendar: React.FunctionComponent = () => {
   const selectedMonth = useAppSelector(selectMonth);
   const selectedYear = useAppSelector(selectYear);
-  const chores = useAppSelector(selectChores);
 
   const { monthName, weekdayOfMonthStart, daysInMonth } = generateMonthInfo(
     selectedMonth,
@@ -56,12 +57,6 @@ const Calendar: React.FunctionComponent = () => {
     (weekdayName) => <div className="CalendarLabel">{weekdayName}</div>
   );
 
-  const choreSalaries = chores.map((chore) => (
-    <div className="ChoreSalary">
-      <ChoreListItem key={chore.id} chore={chore} />
-    </div>
-  ));
-
   return (
     <div className="CalendarWrapper">
       <h1>
@@ -69,7 +64,7 @@ const Calendar: React.FunctionComponent = () => {
       </h1>
       <div className="CalendarLabels">{Labels}</div>
       <div className="Calendar">{Weeks}</div>
-      <div className="ChoreSalaries">{choreSalaries}</div>
+      <ChoreList />
       <div className="Pickers">
         <PickerMonth />
         <PickerYear />
