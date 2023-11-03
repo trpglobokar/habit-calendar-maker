@@ -1,8 +1,9 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
+import CalendarHeaderItem from "../CalendarHeaderItem";
 import { selectYear, changeYear } from "../data/dateSlice";
 import { useAppSelector, useAppDispatch } from "../data/hooks";
 
@@ -27,18 +28,18 @@ const PickerYear: FunctionComponent = () => {
   });
 
   return (
-    <div className="PickerYear">
-      <h3>Year Picker</h3>
+    <CalendarHeaderItem printLabel={currentYear.toString()}>
       <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
+        labelId="year-selector-label"
+        id="year-selector"
         value={selectedYear}
         label="Year"
         onChange={handleChange}
+        sx={{ fontSize: "1.5rem" }}
       >
         {menuItems}
       </Select>
-    </div>
+    </CalendarHeaderItem>
   );
 };
 

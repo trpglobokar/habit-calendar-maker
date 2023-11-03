@@ -1,8 +1,9 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
+import CalendarHeaderItem from "../CalendarHeaderItem";
 import { selectMonth, changeMonth } from "../data/dateSlice";
 import { useAppSelector, useAppDispatch } from "../data/hooks";
 import { monthsEnum } from "../data/types";
@@ -22,18 +23,18 @@ const PickerMonth: FunctionComponent = () => {
   });
 
   return (
-    <div className="PickerMonth">
-      <h3>Month Picker</h3>
+    <CalendarHeaderItem printLabel={monthNames[parseInt(selectedMonth) - 1]}>
       <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
+        labelId="month-selector-label"
+        id="month-selector"
         value={selectedMonth}
-        label="Month"
+        label="Month Selector"
         onChange={handleChange}
+        sx={{ fontSize: "1.5rem" }}
       >
         {menuItems}
       </Select>
-    </div>
+    </CalendarHeaderItem>
   );
 };
 

@@ -21,17 +21,3 @@
   display: flex;
   justify-content: stretch;
 }
-
-.Pickers {
-  display: flex;
-  justify-content: center;
-}
-.Pickers > div {
-  min-width: 160px;
-}
-
-@media print {
-  .Pickers {
-    display: none;
-  }
-}

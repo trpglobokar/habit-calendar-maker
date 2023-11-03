@@ -1,11 +1,10 @@
 import React from "react";
 
+import CalendarHeader from "./CalendarHeader";
 import { selectMonth, selectYear } from "./data/dateSlice";
 import { useAppSelector } from "./data/hooks";
 import Day from "./Day";
 import HabitList from "./pickers/HabitList";
-import PickerMonth from "./pickers/PickerMonth";
-import PickerYear from "./pickers/PickerYear";
 import { generateMonthInfo } from "./utils/utils";
 
 import "./Calendar.css";
@@ -14,7 +13,7 @@ const Calendar: React.FunctionComponent = () => {
   const selectedMonth = useAppSelector(selectMonth);
   const selectedYear = useAppSelector(selectYear);
 
-  const { monthName, weekdayOfMonthStart, daysInMonth } = generateMonthInfo(
+  const { weekdayOfMonthStart, daysInMonth } = generateMonthInfo(
     selectedMonth,
     selectedYear
   );
@@ -56,16 +55,10 @@ const Calendar: React.FunctionComponent = () => {
 
   return (
     <div className="CalendarWrapper">
-      <h1>
-        {monthName} {selectedYear} - Habit Tracker
-      </h1>
+      <CalendarHeader />
       <div className="CalendarLabels">{Labels}</div>
       <div className="Calendar">{Weeks}</div>
       <HabitList />
-      <div className="Pickers">
-        <PickerMonth />
-        <PickerYear />
-      </div>
     </div>
   );
 };

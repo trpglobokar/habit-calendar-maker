@@ -1,0 +1,26 @@
+.CalendarHeaderWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 32px;
+}
+
+.PickerPrintLabel {
+  display: none;
+}
+
+@media print {
+  .CalendarHeaderWrapper {
+    gap: 8px;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .PickerDropdown {
+    display: none;
+  }
+
+  .PickerPrintLabel {
+    display: block;
+  }
+}
