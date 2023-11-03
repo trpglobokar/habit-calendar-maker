@@ -1,11 +1,11 @@
 import React from "react";
 
-import CalendarHeader from "./CalendarHeader";
-import { selectMonth, selectYear } from "./data/dateSlice";
-import { useAppSelector } from "./data/hooks";
+import CalendarHeader from "./calendarHeader/CalendarHeader";
 import Day from "./Day";
-import HabitList from "./pickers/HabitList";
-import { generateMonthInfo } from "./utils/utils";
+import HabitList from "./habitList/HabitList";
+import { selectMonth, selectYear } from "../data/dateSlice";
+import { useAppSelector } from "../data/hooks";
+import { generateMonthInfo } from "../utils/utils";
 
 import "./Calendar.css";
 

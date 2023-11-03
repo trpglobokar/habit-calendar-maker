@@ -1,7 +1,7 @@
 import React from "react";
 
-import Calendar from "./Calendar";
-import Menu from "./Menu";
+import Calendar from "./components/Calendar";
+import Menu from "./components/Menu";
 
 import "./App.css";
 

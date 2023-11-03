@@ -6,9 +6,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
 import HabitListItemEdit from "./HabitListItemEdit";
-import { deleteHabit } from "../data/dateSlice";
-import { useAppDispatch } from "../data/hooks";
-import { Habit } from "../data/types";
+import { deleteHabit } from "../../data/dateSlice";
+import { useAppDispatch } from "../../data/hooks";
+import { Habit } from "../../data/types";
 
 import "./HabitListItem.css";
 

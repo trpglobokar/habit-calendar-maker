@@ -3,12 +3,12 @@ import { FunctionComponent } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-import CalendarHeaderItem from "../CalendarHeaderItem";
-import { selectMonth, changeMonth } from "../data/dateSlice";
-import { useAppSelector, useAppDispatch } from "../data/hooks";
-import { monthsEnum } from "../data/types";
+import CalendarHeaderItem from "./CalendarHeaderItem";
+import { selectMonth, changeMonth } from "../../data/dateSlice";
+import { useAppSelector, useAppDispatch } from "../../data/hooks";
+import { monthsEnum } from "../../data/types";
 
-const PickerMonth: FunctionComponent = () => {
+const CalendarHeaderMonth: FunctionComponent = () => {
   const selectedMonth = useAppSelector(selectMonth);
   const dispatch = useAppDispatch();
 
@@ -38,4 +38,4 @@ const PickerMonth: FunctionComponent = () => {
   );
 };
 
-export default PickerMonth;
+export default CalendarHeaderMonth;

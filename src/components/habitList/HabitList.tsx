@@ -2,8 +2,8 @@ import React from "react";
 
 import HabitListItem from "./HabitListItem";
 import NewHabit from "./NewHabit";
-import { selectHabits } from "../data/dateSlice";
-import { useAppSelector } from "../data/hooks";
+import { selectHabits } from "../../data/dateSlice";
+import { useAppSelector } from "../../data/hooks";
 
 import "./HabitList.css";
 

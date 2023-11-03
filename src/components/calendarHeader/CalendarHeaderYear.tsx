@@ -3,11 +3,11 @@ import { FunctionComponent } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-import CalendarHeaderItem from "../CalendarHeaderItem";
-import { selectYear, changeYear } from "../data/dateSlice";
-import { useAppSelector, useAppDispatch } from "../data/hooks";
+import CalendarHeaderItem from "./CalendarHeaderItem";
+import { selectYear, changeYear } from "../../data/dateSlice";
+import { useAppSelector, useAppDispatch } from "../../data/hooks";
 
-const PickerYear: FunctionComponent = () => {
+const CalendarHeaderYear: FunctionComponent = () => {
   const selectedYear = useAppSelector(selectYear);
   const dispatch = useAppDispatch();
 
@@ -43,4 +43,4 @@ const PickerYear: FunctionComponent = () => {
   );
 };
 
-export default PickerYear;
+export default CalendarHeaderYear;

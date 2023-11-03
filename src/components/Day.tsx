@@ -1,8 +1,8 @@
 import React from "react";
 
-import { selectHabits } from "./data/dateSlice";
-import { useAppSelector } from "./data/hooks";
 import HabitLog from "./HabitLog";
+import { selectHabits } from "../data/dateSlice";
+import { useAppSelector } from "../data/hooks";
 
 import "./Day.css";
 

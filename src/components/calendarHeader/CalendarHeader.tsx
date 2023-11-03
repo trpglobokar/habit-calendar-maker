@@ -1,15 +1,15 @@
 import React from "react";
 
-import PickerMonth from "./pickers/PickerMonth";
-import PickerYear from "./pickers/PickerYear";
+import CalendarHeaderMonth from "./CalendarHeaderMonth";
+import CalendarHeaderYear from "./CalendarHeaderYear";
 
 import "./CalendarHeader.css";
 
 const CalendarHeader: React.FunctionComponent = () => {
   return (
     <div className="CalendarHeaderWrapper">
-      <PickerMonth />
-      <PickerYear />
+      <CalendarHeaderMonth />
+      <CalendarHeaderYear />
     </div>
   );
 };
